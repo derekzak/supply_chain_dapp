@@ -2,7 +2,7 @@
 pragma solidity >=0.4.22 <0.8.0;
 
 /// Provides basic authorization control
-contract Ownable {
+abstract contract Ownable {
     address private origOwner;
 
     // Define an Event
