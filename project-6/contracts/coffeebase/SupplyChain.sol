@@ -71,7 +71,7 @@ contract SupplyChain is Ownable, ConsumerRole, DistributorRole, FarmerRole, Reta
   event Purchased(uint upc);
 
   // Define a modifer that checks to see if msg.sender == owner of the contract
-  modifier onlyOwner() override {
+  modifier onlyOwner() {
     require(msg.sender == owner);
     _;
   }
@@ -292,7 +292,7 @@ contract SupplyChain is Ownable, ConsumerRole, DistributorRole, FarmerRole, Reta
   }
 
   // Define a function 'fetchItemBufferOne' that fetches the data
-  function fetchItemBufferOne(uint _upc) public pure returns
+  function fetchItemBufferOne(uint _upc) public view returns
   (
     uint    itemSKU,
     uint    itemUPC,
@@ -328,7 +328,7 @@ contract SupplyChain is Ownable, ConsumerRole, DistributorRole, FarmerRole, Reta
   }
 
   // Define a function 'fetchItemBufferTwo' that fetches the data
-  function fetchItemBufferTwo(uint _upc) public pure returns
+  function fetchItemBufferTwo(uint _upc) public view returns
   (
     uint    itemSKU,
     uint    itemUPC,
