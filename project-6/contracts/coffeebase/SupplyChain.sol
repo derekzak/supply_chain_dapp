@@ -204,41 +204,37 @@ contract SupplyChain is Ownable, ConsumerRole, DistributorRole, FarmerRole, Reta
   }
 
   // Define a function 'packItem' that allows a farmer to mark an item 'Packed'
-  function packItem(uint _upc) public
+  function packItem(uint _upc) public onlyFarmer processed(_upc) verifyCaller(items[_upc].ownerID)
   // Call modifier to check if upc has passed previous supply chain stage
-
   // Call modifier to verify caller of this function
-
   {
     // Update the appropriate fields
+    items[_upc].itemState = State.Packed;
 
     // Emit the appropriate event
-
+    emit Packed(_upc);
   }
 
   // Define a function 'sellItem' that allows a farmer to mark an item 'ForSale'
-  function sellItem(uint _upc, uint _price) public
+  function sellItem(uint _upc, uint _price) public onlyFarmer packed(_upc) verifyCaller(items[_upc].ownerID)
   // Call modifier to check if upc has passed previous supply chain stage
-
   // Call modifier to verify caller of this function
-
   {
     // Update the appropriate fields
+    items[_upc].productPrice = _price;
+    items[_upc].itemState = State.ForSale;
 
     // Emit the appropriate event
-
+    emit ForSale(_upc);
   }
 
   // Define a function 'buyItem' that allows the disributor to mark an item 'Sold'
   // Use the above defined modifiers to check if the item is available for sale, if the buyer has paid enough,
   // and any excess ether sent is refunded back to the buyer
-  function buyItem(uint _upc) public payable
+  function buyItem(uint _upc) public payable onlyDistributor forSale(_upc) paidEnough(items[_upc].productPrice) checkValue(_upc)
     // Call modifier to check if upc has passed previous supply chain stage
-
     // Call modifer to check if buyer has paid enough
-
     // Call modifer to send any excess ether back to buyer
-
     {
 
     // Update the appropriate fields - ownerID, distributorID, itemState
