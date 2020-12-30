@@ -69,7 +69,7 @@ A step by step series of examples that tell you have to get a development env ru
 Clone this repository:
 
 ```
-git clone https://github.com/udacity/nd1309/tree/master/course-5/project-6
+git clone https://https://github.com/derekzak/supply_chain_dapp
 ```
 
 Change directory to ```project-6``` folder and install all requisite npm packages (as listed in ```package.json```):
@@ -131,15 +131,15 @@ Account Addresses
 In the `truffle console` run the following code setup the accounts:
 
 ```js
-originFarmerID = accounts[1];
-distributorID = accounts[2];
-retailerID = accounts[3];
-consumerID = accounts[4];
-let supplyChain = await SupplyChain.deployed();
-await supplyChain.addFarmer(originFarmerID);
-await supplyChain.addDistributor(distributorID);
-await supplyChain.addRetailer(retailerID);
-await supplyChain.addConsumer(consumerID);
+originFarmerID = accounts[1]
+distributorID = accounts[2]
+retailerID = accounts[3]
+consumerID = accounts[4]
+let supplyChain = await SupplyChain.deployed()
+await supplyChain.addFarmer(originFarmerID)
+await supplyChain.addDistributor(distributorID)
+await supplyChain.addRetailer(retailerID)
+await supplyChain.addConsumer(consumerID)
 ```
 
 In a separate terminal window, launch the DApp:
