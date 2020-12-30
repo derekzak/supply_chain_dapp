@@ -12,6 +12,36 @@ The DApp User Interface when running should look like...
 
 ![truffle test](images/ftc_transaction_history.png)
 
+## UML Diagrams
+
+### Activity Diagram
+
+![Activity Diagram](./uml_diagrams/Supply%20Chain%20Dapp%20-%20Activity%20Diagram.png)
+
+### Sequence Diagram
+
+![Sequence Diagram](./uml_diagrams/Supply%20Chain%20Dapp%20-%20Sequence%20Diagram.png)
+
+### State Diagram
+
+![State Diagram](./uml_diagrams/Supply%20Chain%20Dapp%20-%20State%20Diagram.png)
+
+### Class Diagram
+
+![Class Diagram](./uml_diagrams/Supply%20Chain%20Dapp%20-%20Class%20Diagram.png)
+
+## Libraries Used
+
+* Node v10.18.1
+* Truffle v5.1.56
+* Solidity v0.5.16
+* Web3 v1.3.1
+* Truffle Assertions v0.9.2
+* Lite Server v2.6.1
+
+## IPFS
+
+IPFS was not used for this project.
 
 ## Getting Started
 
@@ -100,11 +130,16 @@ to make the web faster, safer, and more open.
 
 ## Authors
 
-See also the list of [contributors](https://github.com/your/project/contributors.md) who participated in this project.
+This Dapp application was developed as part of the Blockchain Nanodegree with [Udacity](http://www.udacity.com).
+See also the list of [contributors](https://https://github.com/derekzak/supply_chain_dapp/graphs/contributors) who participated in this project.
 
 ## Acknowledgments
 
 * Solidity
-* Ganache-cli
+* Ganache
 * Truffle
 * IPFS
+
+### License
+
+This Dapp application is released under [AGPL](http://www.gnu.org/licenses/agpl-3.0-standalone.html)
