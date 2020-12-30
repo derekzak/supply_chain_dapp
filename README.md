@@ -38,6 +38,13 @@ The DApp User Interface when running should look like...
 * Web3 v1.3.1
 * Truffle Assertions v0.9.2
 * Lite Server v2.6.1
+* Truffle Hdwallet Provider v1.2.1
+
+## Supply Chain Contract Address on Rinkeby Network
+
+Contract Address: [0x5dddbd0723df971a10c93cd675439b626c1fcbf0](https://rinkeby.etherscan.io/address/0x5dddbd0723df971a10c93cd675439b626c1fcbf0)
+
+Transaction Hash: [0x9f7b58eff0fc43d3c86ff915ed64a3359d3c4f3e3826f6b20a966b4904edafd6](https://rinkeby.etherscan.io/tx/0x9f7b58eff0fc43d3c86ff915ed64a3359d3c4f3e3826f6b20a966b4904edafd6)
 
 ## IPFS
 
@@ -113,6 +120,27 @@ truffle test
 All 10 tests should pass.
 
 ![truffle test](images/truffle_test.png)
+
+Account Addresses
+* Contract Owner: 0x27d8d15cbc94527cadf5ec14b69519ae23288b95
+* Farmer: 0x018c2dabef4904ecbd7118350a0c54dbeae3549a
+* Distributor: 0xce5144391b4ab80668965f2cc4f2cc102380ef0a
+* Retailer: 0x460c31107dd048e34971e57da2f99f659add4f02
+* Consumer: 0xd37b7b8c62be2fdde8daa9816483aebdbd356088
+
+In the `truffle console` run the following code setup the accounts:
+
+```js
+originFarmerID = accounts[1];
+distributorID = accounts[2];
+retailerID = accounts[3];
+consumerID = accounts[4];
+let supplyChain = await SupplyChain.deployed();
+await supplyChain.addFarmer(originFarmerID);
+await supplyChain.addDistributor(distributorID);
+await supplyChain.addRetailer(retailerID);
+await supplyChain.addConsumer(consumerID);
+```
 
 In a separate terminal window, launch the DApp:
 
